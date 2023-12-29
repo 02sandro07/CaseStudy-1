@@ -63,6 +63,7 @@ elif selected_tab == "Wartung":
         st.success("Wartungsinformationen wurden angezeigt!")
 
 
-st.sidebar.text("Quelle MCI-Logo: https://www.mci.edu/de/medien/logos-bilder") 
-st.sidebar._text_input("Quelle MCI-Logo: https://www.mci.edu/de/medien/logos-bilder")
+#st.sidebar.text("Quelle MCI-Logo: https://www.mci.edu/de/medien/logos-bilder") 
+#st.sidebar._text_input("Quelle MCI-Logo: https://www.mci.edu/de/medien/logos-bilder")
+st.sidebar.markdown("Quelle MCI-Logo: https://www.mci.edu/de/medien/logos-bilder")
 
