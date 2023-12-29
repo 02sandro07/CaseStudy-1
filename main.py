@@ -1,6 +1,12 @@
 import streamlit as st
 from datetime import datetime
 
+
+#diese bild soll rechts angezeigt werden
+#st.sidebar.image('MCI.png', width=300, caption='MCI Logo: https://www.mci.edu/de/medien/logos-bilder ')
+#st.image('MCI.png', width=600, caption='MCI Logo: https://www.mci.edu/de/medien/logos-bilder ')
+
+
 st.title("Hochschulgeräteverwaltung")
 
 #creating tabs
