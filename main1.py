@@ -58,20 +58,25 @@ elif selected_tab == "Reservierungen":
     
     # Eingabefelder für Reservierungsinformationen
     reservation_date = st.date_input("Reservierungsdatum:")
-    reservation_time = st.time_input("Reservierungszeit:")
+    start_time = st.time_input("Anfangszeit:")
+    end_time = st.time_input("Endzeit:")
     user_email_id = st.text_input("Benutzer E-Mail-Adresse (ID):")
     
     if st.button("Reservierung anlegen/entfernen"):
+        start_datetime = datetime.combine(reservation_date, start_time)
+        end_datetime = datetime.combine(reservation_date, end_time)
+        
         reservation_data = {
             "device_id": device_name,
-            "reservation_date": datetime.combine(reservation_date, reservation_time),
+            "start_datetime": start_datetime,
+            "end_datetime": end_datetime,
             "user_email_id": user_email_id,
             # Weitere Reservierungsattribute hier hinzufügen
         }
         # Dosomething
         with st.spinner("Loading..."):
             time.sleep(1)
-        st.success(f"Reservierung für {device_name} am {reservation_date} um {reservation_time} für Benutzer {user_email_id} wurde angelegt/entfernt!")
+        st.success(f"Reservierung für {device_name} am {reservation_date} von {start_time} bis {end_time} für Benutzer {user_email_id} wurde angelegt/entfernt!")
 
 
 # Wartung-Tab
