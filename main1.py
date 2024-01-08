@@ -52,20 +52,26 @@ elif selected_tab == "Nutzer":
 # Reservierungen-Tab
 elif selected_tab == "Reservierungen":
     st.header("Reservierung anlegen oder entfernen")
+    
     # Erstelle ein Dropdown-Menü mit allen Geräten
     device_name = st.selectbox("Gerät:", ["Gerät 1", "Gerät 2", "Gerät 3"])
+    
+    # Eingabefelder für Reservierungsinformationen
     reservation_date = st.date_input("Reservierungsdatum:")
+    reservation_time = st.time_input("Reservierungszeit:")
+    user_email_id = st.text_input("Benutzer E-Mail-Adresse (ID):")
     
     if st.button("Reservierung anlegen/entfernen"):
         reservation_data = {
             "device_id": device_name,
-            "reservation_date": reservation_date,
+            "reservation_date": datetime.combine(reservation_date, reservation_time),
+            "user_email_id": user_email_id,
             # Weitere Reservierungsattribute hier hinzufügen
         }
         # Dosomething
         with st.spinner("Loading..."):
             time.sleep(1)
-        st.success(f"Reservierung für {device_name} wurde für den {reservation_date} angelegt/entfernt!")
+        st.success(f"Reservierung für {device_name} am {reservation_date} um {reservation_time} für Benutzer {user_email_id} wurde angelegt/entfernt!")
 
 
 # Wartung-Tab
