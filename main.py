@@ -1,5 +1,6 @@
 from st_pages import Page, add_page_title, show_pages
 import streamlit as st
+import time
 
 
 st.set_page_config(
@@ -27,3 +28,6 @@ show_pages(
 )
 
 add_page_title()  # Optional method to add title and icon to current page
+
+
+

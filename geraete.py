@@ -1,6 +1,7 @@
 import streamlit as st
 import datetime
 from st_pages import add_page_title
+import time
 
 add_page_title()
 
@@ -21,4 +22,6 @@ if st.button("Gerät anlegen/ändern"):
         "description": device_description
         # Weitere Attribute hier hinzufügen
     }#dosomething
+    with st.spinner("Loading..."):
+            time.sleep(1)
     st.success(f"Gerät {device_name} mit dem Verantwortlichen {device_responsible} wurde angelegt/aktualisiert!")
